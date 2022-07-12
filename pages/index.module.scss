@@ -1,4 +1,15 @@
-.home-container > * {
-	background: rgb(207, 207, 207);
+.home-container {
 	margin-top: 1rem;
+}
+
+.left-side {
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.right-side {
+	position: sticky;
+	padding: 2rem;
 }
