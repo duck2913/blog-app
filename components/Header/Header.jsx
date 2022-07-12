@@ -1,11 +1,11 @@
-import { Group, Image } from "@mantine/core";
+import { Button, Group, Image } from "@mantine/core";
 import { NextLink } from "@mantine/next";
 
 import classes from "./Header.module.scss";
 
 const categories = [
-	{ name: "React", slug: "/react" },
-	{ name: "JS", slug: "/js" },
+	{ name: "React", slug: "/react", color: "lime" },
+	{ name: "JS", slug: "/js", color: "violet" },
 ];
 
 const Header = () => {
@@ -23,9 +23,14 @@ const Header = () => {
 				<div className="links">
 					<Group>
 						{categories.map((category) => (
-							<NextLink key={category.name} href={category.slug}>
-								{category.name}
-							</NextLink>
+							<Button
+								variant="light"
+								key={category.name}
+								radius="lg"
+								color={category.color}
+							>
+								<NextLink href={category.slug}>{category.name}</NextLink>
+							</Button>
 						))}
 					</Group>
 				</div>

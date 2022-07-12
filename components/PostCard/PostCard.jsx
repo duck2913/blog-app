@@ -4,8 +4,6 @@ import { Calendar } from "tabler-icons-react";
 import moment from "moment";
 
 const PostCard = ({ post }) => {
-	console.log("🚀 -> post", post);
-
 	return (
 		<Card shadow="md" p="lg" style={{ textAlign: "center" }}>
 			<Card.Section>
