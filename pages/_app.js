@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { MantineProvider } from "@mantine/core";
 import "../styles/globals.css";
+import Layout from "../components/Layout/Layout";
 
 export default function App(props) {
 	const { Component, pageProps } = props;
@@ -23,7 +24,9 @@ export default function App(props) {
 					fontFamily: "Be Vietnam Pro",
 				}}
 			>
-				<Component {...pageProps} />
+				<Layout>
+					<Component {...pageProps} />
+				</Layout>
 			</MantineProvider>
 		</>
 	);
