@@ -1,4 +1,4 @@
-import { Card, Group, Image } from "@mantine/core";
+import { Card, Image } from "@mantine/core";
 import { NextLink } from "@mantine/next";
 import { useEffect, useState } from "react";
 import moment from "moment";
@@ -6,13 +6,12 @@ import { getSimilarPosts, getRecentPosts } from "../../services";
 
 const PostWidget = ({ categories, slug }) => {
 	const [posts, setPosts] = useState([]);
-	console.log("🚀 -> posts", posts);
 
 	useEffect(() => {
 		if (slug) {
 			getSimilarPosts(categories, slug).then((result) => setPosts(result));
 		} else {
-			getRecentPosts(categories, slug).then((result) => setPosts(result));
+			getRecentPosts().then((result) => setPosts(result));
 		}
 	}, [slug, categories]);
 

@@ -1,14 +1,30 @@
+import { useEffect, useState } from "react";
 import { Button, Group, Image } from "@mantine/core";
 import { NextLink } from "@mantine/next";
+import { getCategories } from "../../services";
 
 import classes from "./Header.module.scss";
 
-const categories = [
-	{ name: "React", slug: "/react", color: "lime" },
-	{ name: "JS", slug: "/js", color: "violet" },
+const colors = [
+	"green",
+	"lime",
+	"orange",
+	"yellow",
+	"teal",
+	"red",
+	"violet",
+	"pink",
+	"grape",
+	"indigo",
 ];
 
 const Header = () => {
+	const [categories, setCategories] = useState([]);
+
+	useEffect(() => {
+		getCategories().then((result) => setCategories(result));
+	}, []);
+
 	return (
 		<div className={classes["header"]}>
 			<Group position="apart">
@@ -27,9 +43,11 @@ const Header = () => {
 								variant="light"
 								key={category.name}
 								radius="lg"
-								color={category.color}
+								color={colors[Math.round(Math.random() * (colors.length - 1))]}
 							>
-								<NextLink href={category.slug}>{category.name}</NextLink>
+								<NextLink href={`category/${category.slug}`}>
+									{category.name}
+								</NextLink>
 							</Button>
 						))}
 					</Group>
