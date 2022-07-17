@@ -1,7 +1,6 @@
 import { Card, Title, Text, Image } from "@mantine/core";
 
 const Author = ({ author }) => {
-	console.log("🚀 -> author", author);
 	return (
 		<Card
 			shadow="sm"

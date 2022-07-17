@@ -1,5 +1,5 @@
 import { Card, Image, Text, Button, Title, Group } from "@mantine/core";
-import { NextLink } from "@mantine/next";
+import Link from "next/link";
 import { Calendar } from "tabler-icons-react";
 import moment from "moment";
 
@@ -36,7 +36,7 @@ const PostCard = ({ post }) => {
 			</Text>
 
 			<Button variant="light" color="blue">
-				<NextLink href={`/post/${post.slug}`}>Continue Reading</NextLink>
+				<Link href={`/post/${post.slug}`}>Continue Reading</Link>
 			</Button>
 		</Card>
 	);

@@ -15,8 +15,8 @@ const PostDetails = ({ post }) => {
 			<Grid.Col md={8} sm={12} className={classes["left-side"]}>
 				<PostDetail post={post} />
 				<Author author={post.authors[0]} />
-				<CommentForm />
-				<Comments />
+				<CommentForm slug={post.slug} />
+				<Comments slug={post.slug} ser />
 			</Grid.Col>
 			<Grid.Col md={4} sm={12} className={classes["right-side"]}>
 				<div className={classes["sticky"]}>
