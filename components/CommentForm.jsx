@@ -32,7 +32,7 @@ const CommentForm = ({ slug }) => {
 				setSuccess(true);
 				setTimeout(() => {
 					setSuccess(false);
-				}, 10000);
+				}, 4000);
 			})
 			.catch((error) => console.error(error));
 	}

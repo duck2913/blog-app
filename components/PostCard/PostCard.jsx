@@ -35,9 +35,11 @@ const PostCard = ({ post }) => {
 				{post.excerpt}
 			</Text>
 
-			<Button variant="light" color="blue">
-				<Link href={`/post/${post.slug}`}>Continue Reading</Link>
-			</Button>
+			<Link href={`/post/${post.slug}`} passHref>
+				<Button variant="light" color="blue">
+					Continue Reading
+				</Button>
+			</Link>
 		</Card>
 	);
 };
